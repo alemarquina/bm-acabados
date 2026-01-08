@@ -1,5 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Container from "../components/Container.astro";
 ---
 
-<Layout title="BM Acabados" />
+<Layout title="BM Acabados">
+    <div class="relative w-full">
+        <img src="/assets/home/bg_home.png" class="h-[28em] object-cover w-full" alt="Imagen de Fondo">
+        
+        <Container class="absolute inset-0">
+            <div class="h-full flex flex-col justify-center">
+                <h1>EN <span>BM</span> ACABADOS DE <span>EXCELENCIA</span></h1>
+                <p>
+                  Ofrecemos servicios generales especializados en acabados y revestimientos para todo tipo de espacios, combinando funcionalidad y estética.  
+                </p>
+                <div>
+
+                </div>
+            </div>
+        </Container>
+    </div>
+            
+    
+</Layout>
