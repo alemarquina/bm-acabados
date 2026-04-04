@@ -1,24 +1,43 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../layouts/Container.astro";
+import ButtonGolden from "../components/ButtonGolden.astro";
+import ButtonBlue from "../components/ButtonBlue.astro";
+import MainTitle from "../components/MainTitle.astro";
 ---
 
 <Layout title="BM Acabados">
-    <div class="relative w-full">
-        <img src="/assets/home/bg_home.png" class="h-[28em] object-cover w-full" alt="Imagen de Fondo">
-        
-        <Container class="absolute inset-0">
-            <div class="h-full flex flex-col justify-center">
-                <h1>EN <span>BM</span> ACABADOS DE <span>EXCELENCIA</span></h1>
-                <p>
-                  Ofrecemos servicios generales especializados en acabados y revestimientos para todo tipo de espacios, combinando funcionalidad y estética.  
-                </p>
-                <div>
+  <div class="relative w-full">
+    <img
+      src="/assets/home/bg_home.png"
+      class="h-[28em] object-cover w-full"
+      alt="Imagen de Fondo"
+    />
 
-                </div>
-            </div>
-        </Container>
-    </div>
-            
-    
+    <Container class="absolute inset-0">
+      <div class="h-full flex flex-col justify-center space-y-4">
+        <h1 class="text-2xl text-white md:text-7xl font-extrabold">EN <span class="text-goldenSecondary text-2xl md:text-7xl">BM</span> ACABADOS DE <span class="text-goldenSecondary text-xl md:text-7xl">EXCELENCIA</span></h1>
+        <p class="text-white">
+          Ofrecemos servicios generales especializados en acabados y
+          revestimientos para todo tipo de espacios, combinando funcionalidad y
+          estética.
+        </p>
+        <div class="flex space-x-3">
+          <ButtonGolden nameButton="Contactar"/>
+          <ButtonBlue nameButton="Ver Servicios"/>
+        </div>
+      </div>      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14">
+         <div class="flex flex-col justify-center items-center space-y-2 sm:items-start sm:order-2 text-center sm:text-left">
+           <MainTitle nameTitle="¿Quienes Somos?" />
+           <p>Somos BM Acabados y nos enfocamos en entregar acabados de alta calidad a construcciones,
+              combinando experiencia, profesionalismo y un compromiso constante con la satisfacción de nuestros clientes.          
+           </p>
+         </div>
+         <div class="sm:order-1">
+           <img class="m-auto max-h-36 sm:max-h-52" src="/assets/home/worker.png" alt="Imagen de Trabajador">
+         </div>        
+      </div>
+    </Container>
+  </div>
 </Layout>
