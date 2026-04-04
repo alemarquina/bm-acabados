@@ -1,0 +1,7 @@
+---
+const { nameTitle, class: className } = Astro.props
+---
+
+<h2 class="text-blueText text-lg font-bold" class:list={[className]}>
+    {nameTitle}
+</h2>
