@@ -1,0 +1,7 @@
+---
+const { nameButton, class: className } = Astro.props
+---
+
+<button class="flex min-w-40 justify-center py-2 bg-goldenPrimary hover:bg-goldenSecondary duration-200 rounded-full text-white" class:list={[className]}>
+    {nameButton}
+</button>
