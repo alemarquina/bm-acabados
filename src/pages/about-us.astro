@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+import MainTitle from "../components/layout/MainTitle.astro";
+---
+
+<Layout title="Nosotros — BM Acabados">
+  <!-- Header -->
+  <section class="w-full bg-blueDark py-16">
+    <Container>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white">
+        ¿Quiénes <span class="text-goldenSecondary">Somos?</span>
+      </h1>
+    </Container>
+  </section>
+
+  <!-- Contenido -->
+  <section class="py-14">
+    <Container>
+      <div class="flex flex-col space-y-8 max-w-2xl">
+        <div>
+          <MainTitle nameTitle="Nuestra Historia" />
+          <p class="mt-2 text-darkText">
+            Somos BM Acabados, una empresa dedicada a ofrecer servicios de acabados
+            y revestimientos de alta calidad. Nos enfocamos en cada detalle para
+            garantizar resultados que superen las expectativas de nuestros clientes.
+          </p>
+        </div>
+
+        <div>
+          <MainTitle nameTitle="Nuestra Misión" />
+          <p class="mt-2 text-darkText">
+            Brindar servicios especializados en acabados con profesionalismo,
+            puntualidad y materiales de primera calidad, combinando funcionalidad
+            y estética en cada proyecto.
+          </p>
+        </div>
+
+        <div>
+          <MainTitle nameTitle="Nuestros Valores" />
+          <ul class="mt-2 space-y-2 text-darkText">
+            <li class="flex items-start gap-2">
+              <span class="text-goldenPrimary font-bold">✓</span> Compromiso con la calidad
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-goldenPrimary font-bold">✓</span> Puntualidad y responsabilidad
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-goldenPrimary font-bold">✓</span> Trato cercano y honesto
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-goldenPrimary font-bold">✓</span> Mejora continua
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+</Layout>

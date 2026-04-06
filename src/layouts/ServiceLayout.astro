@@ -1,0 +1,75 @@
+---
+import Layout from "./Layout.astro";
+import Container from "./Container.astro";
+import MainTitle from "../components/layout/MainTitle.astro";
+import type { Service } from "../content/services";
+
+interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.title} — BM Acabados`}>
+  <!-- Hero del servicio -->
+  <section class="relative w-full bg-blueDark py-16">
+    <Container>
+      <div class="flex flex-col items-start space-y-3">
+        <a
+          href="/servicios"
+          class="text-goldenSecondary text-sm hover:underline flex items-center gap-1"
+        >
+          ← Volver a Servicios
+        </a>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white">
+          {service.title}
+        </h1>
+        <p class="text-white/80 max-w-xl">
+          {service.shortDescription}
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="py-12">
+    <Container>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <!-- Imagen -->
+        <div class="rounded-xl overflow-hidden shadow-md">
+          <img
+            src={service.image}
+            alt={service.title}
+            class="w-full h-72 object-cover"
+          />
+        </div>
+
+        <!-- Descripción y características -->
+        <div class="flex flex-col space-y-6">
+          <div>
+            <MainTitle nameTitle="Descripción" />
+            <p class="mt-2 text-darkText">{service.description}</p>
+          </div>
+
+          <div>
+            <MainTitle nameTitle="¿Qué incluye?" />
+            <ul class="mt-2 space-y-2">
+              {
+                service.features.map((feature) => (
+                  <li class="flex items-start gap-2 text-darkText">
+                    <span class="text-goldenPrimary font-bold">✓</span>
+                    {feature}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Slot para contenido extra opcional por servicio -->
+  <slot />
+</Layout>

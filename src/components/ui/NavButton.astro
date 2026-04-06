@@ -2,14 +2,16 @@
 interface Props {
   name: string;
   Icon: any;
+  href?: string;
 }
 
-const { name, Icon } = Astro.props;
+const { name, Icon, href = "#" } = Astro.props;
 ---
 
-<button
+<a
+  href={href}
   class="flex items-center space-x-4 py-2.5 px-7 w-full text-gray-600 hover:bg-lightText duration-200 hover:text-black hover:font-medium"
 >
   <Icon />
   <span>{name}</span>
-</button>
+</a>

@@ -1,5 +1,5 @@
 ---
-import NavButton from "./NavButton.astro";
+import NavButton from "../ui/NavButton.astro";
 import { House, Paintbrush, Crown, Phone, X, Menu } from "lucide-astro";
 ---
 
@@ -28,10 +28,10 @@ import { House, Paintbrush, Crown, Phone, X, Menu } from "lucide-astro";
 
     <div class="py-20 w-full">
       <nav>
-        <NavButton name="Inicio" Icon={House} />
-        <NavButton name="Servicios" Icon={Paintbrush} />
-        <NavButton name="Nosotros" Icon={Crown} />
-        <NavButton name="Contactar" Icon={Phone} />
+        <NavButton name="Inicio" Icon={House} href="/" />
+        <NavButton name="Servicios" Icon={Paintbrush} href="/servicios" />
+        <NavButton name="Nosotros" Icon={Crown} href="/nosotros" />
+        <NavButton name="Contactar" Icon={Phone} href="/#contacto" />
       </nav>
     </div>
   </aside>
