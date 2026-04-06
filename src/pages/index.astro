@@ -5,15 +5,17 @@ import Container from "../layouts/Container.astro";
 import MainTitle from "../components/layout/MainTitle.astro";
 import bgHome from "../assets/home/bg_home.png";
 import worker from "../assets/home/worker.png";
+import BgBlueSynth from "../components/layout/BgBlueSynth.astro";
+import ServiceCard from "../components/ui/ServiceCard.astro";
 ---
 
 <Layout title="BM Acabados">
 
   <!-- Hero -->
-  <section id="inicio" class="relative w-full">
+  <section id="home" class="relative w-full">
     <Image
       src={bgHome}
-      class="h-[28em] object-cover w-full"
+      class="h-96 object-cover w-full"
       alt="Imagen de Fondo"
       loading="eager"
     />
@@ -31,14 +33,11 @@ import worker from "../assets/home/worker.png";
         <div class="flex space-x-3">
           <a
             href="#contacto"
-            class="flex min-w-36 justify-center py-2 bg-goldenPrimary hover:bg-goldenSecondary duration-200 rounded-full text-white"
-          >
+            class="flex min-w-36 justify-center py-2 bg-goldenPrimary hover:bg-goldenSecondary duration-200 rounded-full text-white">
             Contactar
           </a>
-          <a
-            href="/servicios"
-            class="flex min-w-36 justify-center py-2 bg-blueDark hover:bg-bluePrimary duration-200 rounded-full text-white"
-          >
+          <a href="/servicios"
+            class="flex min-w-36 justify-center py-2 bg-blueDark hover:bg-bluePrimary duration-200 rounded-full text-white">
             Ver Servicios
           </a>
         </div>
@@ -47,11 +46,11 @@ import worker from "../assets/home/worker.png";
   </section>
 
   <!-- About Us -->
-  <section id="nosotros">
+  <section id="about-us">
     <Container>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14">
         <div class="flex flex-col justify-center items-center space-y-2 sm:items-start sm:order-2 text-center sm:text-left">
-          <MainTitle nameTitle="¿Quienes Somos?" />
+          <MainTitle nameTitle="¿Quienes Somos?"/>
           <p>
             Somos BM Acabados y nos enfocamos en entregar acabados de alta calidad a construcciones,
             combinando experiencia, profesionalismo y un compromiso constante con la satisfacción de nuestros clientes.
@@ -67,5 +66,22 @@ import worker from "../assets/home/worker.png";
       </div>
     </Container>
   </section>  
+
+  <section id="cards-services">
+    <BgBlueSynth>
+      <Container>
+        <div class="pt-4 md:pt-0 pb-8 space-y-4">
+           <div class="w-3/5 mx-auto text-center space-y-4">
+              <MainTitle nameTitle="Nuestros Servicios" class="mx-auto text-white max-w-56"/>
+              <p class="text-white">Realizamos multiservicios como Pintura en General, Sistema de Drywall, Carpintería, Gasfitería, Marmol e Granito, Estuco Veneciano y mucho más</p>
+           </div>
+           <div>
+              <ServiceCard/>
+           </div> 
+        </div>
+      </Container>
+    </BgBlueSynth>
+  </section>
+
 
 </Layout>
