@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        goldenPrimary: "#D4AF37",
-        goldenSecondary: "#E7C468",
+        goldenPrimary: "#E7C468",   
+        goldenSecondary: "#D6B55C", 
         bluePrimary: "#1E40AF",
         blueDark: "#1A304E",
         blueText: "#002251",
@@ -13,6 +13,9 @@ export default {
         lightText: "#E8E8E8",
         whiteBg: "#F5F5F5",
         blackBg: "#1A1A1A",
+      },
+      fontFamily: {
+        "encode-sans": ['"Encode Sans SC"', 'sans-serif'],
       },
     },
   },

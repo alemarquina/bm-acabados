@@ -5,7 +5,6 @@ import Container from "../layouts/Container.astro";
 import MainTitle from "../components/layout/MainTitle.astro";
 import bgHome from "../assets/home/bg_home.png";
 import worker from "../assets/home/worker.png";
-import BgBlueSynth from "../components/layout/BgBlueSynth.astro";
 import ServiceCard from "../components/ui/ServiceCard.astro";
 
 ---
@@ -16,29 +15,29 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
   <section id="home" class="relative w-full">
     <Image
       src={bgHome}
-      class="h-96 object-cover w-full"
+      class="min-h-96 object-cover w-full brightness-50"
       alt="Imagen de Fondo"
       loading="eager"
     />
     <Container class="absolute inset-0">
-      <div class="h-full flex flex-col justify-center space-y-4">
-        <h1 class="text-2xl text-white md:text-7xl font-extrabold">
-          EN <span class="text-goldenSecondary text-2xl md:text-7xl">BM</span> ACABADOS DE
-          <span class="text-goldenSecondary text-xl md:text-7xl">EXCELENCIA</span>
+      <div class="h-full flex flex-col justify-center space-y-5 lg:space-y-10 text-center">
+        <h1 class="text-2xl text-white md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold font-encode-sans">
+          EN <span class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl">BM</span> ACABADOS DE
+          <span class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl">EXCELENCIA</span>
         </h1>
         <p class="text-white">
           Ofrecemos servicios generales especializados en acabados y
           revestimientos para todo tipo de espacios, combinando funcionalidad y
           estética.
         </p>
-        <div class="flex space-x-3">
+        <div class="flex mx-auto space-x-3">
           <a
             href="#contacto"
-            class="flex min-w-36 justify-center py-2 bg-goldenPrimary hover:bg-goldenSecondary duration-200 rounded-full text-white">
+            class="flex min-w-36 justify-center py-2 bg-goldenSecondary hover:bg-goldenPrimary animate-pulse duration-200 rounded-full text-white">
             Contactar
           </a>
           <a href="/servicios"
-            class="flex min-w-36 justify-center py-2 bg-blueDark hover:bg-bluePrimary duration-200 rounded-full text-white">
+            class="flex min-w-36 justify-center py-2 bg-zinc-100 hover:bg-white duration-200 rounded-full text-zinc-800">
             Ver Servicios
           </a>
         </div>
@@ -49,10 +48,10 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
   <!-- About Us -->
   <section id="about-us">
     <Container>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14">
         <div class="flex flex-col justify-center items-center space-y-2 sm:items-start sm:order-2 text-center sm:text-left">
           <MainTitle nameTitle="¿Quienes Somos?"/>
-          <p>
+          <p class="text-white">
             Somos BM Acabados y nos enfocamos en entregar acabados de alta calidad a construcciones,
             combinando experiencia, profesionalismo y un compromiso constante con la satisfacción de nuestros clientes.
           </p>
@@ -68,8 +67,7 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
     </Container>
   </section>  
 
-  <section id="cards-services">
-    <BgBlueSynth>
+  <section id="cards-services">    
       <Container>
         <div class="pt-4 md:pt-0 pb-8 space-y-4">
            <div class="md:w-3/5 mx-auto text-center space-y-4">
@@ -80,8 +78,7 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
               <ServiceCard/>
            </div> 
         </div>
-      </Container>
-    </BgBlueSynth>
+      </Container>    
   </section>
 
 

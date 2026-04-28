@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "@fontsource/poppins";
+import "@fontsource/encode-sans-sc"
 import Head from "../components/layout/Head.astro";
 import Header from "../components/layout/Header.astro";
 import ButtonWhatsapp from "../components/ui/ButtonWhatsapp.astro";
@@ -11,7 +12,7 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="es">
   <Head title={title} />
-  <body class="bg-whiteBg">
+  <body>
     <Header />
     <slot />
     <ButtonWhatsapp/>
