@@ -3,16 +3,16 @@ import ButtonGolden from "../ui/ButtonGolden.astro";
 import Sidebar from "./Sidebar.astro";
 ---
 
-<header class="max-w-4xl w-11/12 mx-auto">
+<header class="max-w-4xl w-11/12 mx-auto text-white">
     <div class="flex justify-between items-center py-3">
         <a href="#inicio">
-            <img src="/logo-black.svg" alt="Logo BM" />
+            <img src="/logo-white.svg" class="h-14" alt="Logo BM" />
         </a>
         <div class="hidden sm:flex">
             <nav class="space-x-4 md:space-x-6">
-                <a href="/" class="px-4 py-2 hover:bg-lightText duration-200 rounded-full">Inicio</a>
-                <a href="/servicios" class="px-4 py-2 hover:bg-lightText duration-200 rounded-full">Servicios</a>
-                <a href="/nosotros" class="px-4 py-2 hover:bg-lightText duration-200 rounded-full">Nosotros</a>
+                <a href="/" class="px-4 py-2 hover:bg-zinc-900 duration-200 rounded-full">Inicio</a>
+                <a href="/servicios" class="px-4 py-2 hover:bg-zinc-900 duration-200 rounded-full">Servicios</a>
+                <a href="/nosotros" class="px-4 py-2 hover:bg-zinc-900 duration-200 rounded-full">Nosotros</a>
             </nav>
         </div>
         <Sidebar/>
