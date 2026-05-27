@@ -4,6 +4,7 @@ import Layout from "./Layout.astro";
 import Container from "./Container.astro";
 import MainTitle from "../components/ui/MainTitle.astro";
 import type { Service } from "../content/services";
+import { Image } from "astro:assets";
 
 interface Props {
   service: Service;
@@ -39,33 +40,40 @@ const { service } = Astro.props;
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <!-- Imagen -->
         <div class="rounded-xl overflow-hidden shadow-md">
-          <img
+          <Image
             src={service.image}
             alt={service.title}
+            width={600}
+            height={350}
             class="w-full h-72 object-cover"
+            loading="eager"
           />
         </div>
 
         <!-- Descripción y características -->
         <div class="flex flex-col space-y-6">
-          <div>
-            <MainTitle nameTitle="Descripción" />
-            <p class="mt-2 text-darkText">{service.description}</p>
-          </div>
+          {service.description && (
+            <div>
+              <MainTitle nameTitle="Descripción" />
+              <p class="mt-2 text-darkText">{service.description}</p>
+            </div>
+          )}
 
-          <div>
-            <MainTitle nameTitle="¿Qué incluye?" />
-            <ul class="mt-2 space-y-2">
-              {
-                service.features.map((feature) => (
-                  <li class="flex items-start gap-2 text-darkText">
-                    <span class="text-goldenPrimary font-bold">✓</span>
-                    {feature}
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+          {service.features && service.features.length > 0 && (
+            <div>
+              <MainTitle nameTitle="¿Qué incluye?" />
+              <ul class="mt-2 space-y-2">
+                {
+                  service.features.map((feature) => (
+                    <li class="flex items-start gap-2 text-darkText">
+                      <span class="text-goldenPrimary font-bold">✓</span>
+                      {feature}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </Container>

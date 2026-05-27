@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Container from "../../layouts/Container.astro";
 import MainTitle from "../../components/ui/MainTitle.astro";
 import { services } from "../../content/services";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Servicios — BM Acabados">
@@ -32,9 +33,11 @@ import { services } from "../../content/services";
               class="group flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200 bg-white"
             >
               <div class="overflow-hidden h-48">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  width={500}
+                  height={300}
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
