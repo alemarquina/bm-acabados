@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        goldenPrimary: "#E7C468",   
-        goldenSecondary: "#D6B55C", 
+        goldenPrimary: "#E7C468",
+        goldenSecondary: "#D6B55C",
         bluePrimary: "#1E40AF",
         blueDark: "#1A304E",
         blueText: "#002251",
         darkText: "#4B4B4B",
         lightText: "#E8E8E8",
         whiteBg: "#F5F5F5",
-        blackBg: "#1A1A1A",
+        blackBg: "#27272A",
       },
       fontFamily: {
         "encode-sans": ['"Encode Sans SC"', 'sans-serif'],

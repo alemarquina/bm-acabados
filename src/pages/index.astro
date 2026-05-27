@@ -2,28 +2,34 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Container from "../layouts/Container.astro";
-import MainTitle from "../components/layout/MainTitle.astro";
-import bgHome from "../assets/home/bg_home.png";
+import MainTitle from "../components/ui/MainTitle.astro";
+import BgHome from "../assets/home/bg_home.png";
 import worker from "../assets/home/worker.png";
 import ServiceCard from "../components/ui/ServiceCard.astro";
-
+import { services } from "../content/services";
 ---
 
 <Layout title="BM Acabados">
-
   <!-- Hero -->
   <section id="home" class="relative w-full">
     <Image
-      src={bgHome}
-      class="min-h-96 object-cover w-full brightness-50"
+      src={BgHome}
+      class="h-96 2xl:h-[470px] object-cover w-full brightness-75"
       alt="Imagen de Fondo"
-      loading="eager"
-    />
+      loading="eager"/>
     <Container class="absolute inset-0">
-      <div class="h-full flex flex-col justify-center space-y-5 lg:space-y-10 text-center">
-        <h1 class="text-2xl text-white md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold font-encode-sans">
-          EN <span class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl">BM</span> ACABADOS DE
-          <span class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl">EXCELENCIA</span>
+      <div
+        class="h-full flex flex-col justify-center space-y-5 lg:space-y-6 text-center">
+        <h1 class="text-2xl text-white md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold font-encode-sans"
+        >
+          EN <span
+            class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl"
+            >BM</span
+          > ACABADOS DE
+          <span
+            class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl"
+            >EXCELENCIA</span
+          >
         </h1>
         <p class="text-white">
           Ofrecemos servicios generales especializados en acabados y
@@ -33,11 +39,14 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
         <div class="flex mx-auto space-x-3">
           <a
             href="#contacto"
-            class="flex min-w-36 justify-center py-2 bg-goldenSecondary hover:bg-goldenPrimary animate-pulse duration-200 rounded-full text-white">
+            class="flex min-w-36 justify-center py-2 bg-goldenSecondary hover:bg-goldenPrimary animate-pulse duration-200 rounded-full text-white"
+          >
             Contactar
           </a>
-          <a href="/servicios"
-            class="flex min-w-36 justify-center py-2 bg-zinc-100 hover:bg-white duration-200 rounded-full text-zinc-800">
+          <a
+            href="/servicios"
+            class="flex min-w-36 justify-center py-2 bg-zinc-100 hover:bg-white duration-200 rounded-full text-zinc-800"
+          >
             Ver Servicios
           </a>
         </div>
@@ -48,38 +57,56 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
   <!-- About Us -->
   <section id="about-us">
     <Container>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14">
-        <div class="flex flex-col justify-center items-center space-y-2 sm:items-start sm:order-2 text-center sm:text-left">
-          <MainTitle nameTitle="¿Quienes Somos?"/>
-          <p class="text-white">
-            Somos BM Acabados y nos enfocamos en entregar acabados de alta calidad a construcciones,
-            combinando experiencia, profesionalismo y un compromiso constante con la satisfacción de nuestros clientes.
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14"
+      >
+        <div
+          class="flex flex-col justify-center items-center space-y-2 sm:items-start sm:order-2 text-center sm:text-left"
+        >
+          <MainTitle nameTitle="¿Quienes Somos?" />
+          <p>
+            Somos BM Acabados y nos enfocamos en entregar acabados de alta
+            calidad a construcciones, combinando experiencia, profesionalismo y
+            un compromiso constante con la satisfacción de nuestros clientes.
           </p>
         </div>
         <div class="sm:order-1">
           <Image
             src={worker}
-            class="m-auto max-h-36 sm:max-h-52 bg-cover object-cover object-top"
+            class="m-auto max-h-36 sm:max-h-52 bg-cover rounded-xl object-cover object-top"
             alt="Imagen de Trabajador"
           />
         </div>
-      </div>
+      </div>            
     </Container>
-  </section>  
-
-  <section id="cards-services">    
-      <Container>
-        <div class="pt-4 md:pt-0 pb-8 space-y-4">
-           <div class="md:w-3/5 mx-auto text-center space-y-4">
-              <MainTitle nameTitle="Nuestros Servicios" class="mx-auto text-white max-w-56"/>
-              <p class="text-white">Realizamos multiservicios como Pintura en General, Sistema de Drywall, Carpintería, Gasfitería, Marmol e Granito, Estuco Veneciano y mucho más</p>
-           </div>
-           <div>
-              <ServiceCard/>
-           </div> 
-        </div>
-      </Container>    
+    <div class="h-2 bg-goldenPrimary"></div>
   </section>
 
-
+  <section id="cards-services" class="px-4 sm:px-6 md:px-8 bg-white">
+    <Container>
+      <div class="pt-4 md:pt-20 pb-8 space-y-4">
+        <div class="md:w-3/5 mx-auto text-center space-y-4">
+          <MainTitle nameTitle="Nuestros Servicios" class="mx-auto" />
+          <p class="text-zinc-800">
+            Realizamos multiservicios como Pintura en General, Sistema de
+            Drywall, Carpintería, Gasfitería, Marmol e Granito, Estuco Veneciano
+            y mucho más
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 justify-items-center">
+          {
+            services.map((service) => (
+              <ServiceCard
+                slug={service.slug}
+                title={service.title}
+                shortDescription={service.shortDescription}
+                image={service.image}
+                icon={service.icon}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </Container>
+  </section>
 </Layout>
