@@ -1,20 +1,46 @@
+import type { ImageMetadata } from "astro";
+
+// Imágenes de servicios
+import service1 from "../assets/services/service-1.webp";
+import service2 from "../assets/services/service-2.webp";
+import service3 from "../assets/services/service-3.webp";
+import service4 from "../assets/services/service-4.webp";
+import service5 from "../assets/services/service-5.webp";
+import service6 from "../assets/services/service-6.webp";
+import service7 from "../assets/services/service-7.webp";
+import service8 from "../assets/services/service-8.webp";
+
+// Íconos de servicios
+import iconPintura from "../assets/services/icon-pintura.png";
+import iconDrywall from "../assets/services/icon-drywall.png";
+import iconEstuco from "../assets/services/icon-estuco.png";
+import iconGasfiteria from "../assets/services/icon-gasfiteria.png";
+import iconMarmol from "../assets/services/icon-marmol-granito.png";
+import iconCarpinteria from "../assets/services/icon-carpinteria.png";
+import iconMayolica from "../assets/services/icon-mayolica-porcelanato.png";
+import iconPiso from "../assets/services/icon-piso-laminado-spc.png";
+
 export interface Service {
   slug: string;
   title: string;
   shortDescription: string;
-  description: string;
-  image: string;
-  features: string[];
+  image: ImageMetadata;
+  icon: ImageMetadata;
+  // Campos opcionales para páginas de detalle
+  description?: string;
+  features?: string[];
 }
 
 export const services: Service[] = [
   {
-    slug: "general-painting",
-    title: "Pintura General",
-    shortDescription: "Aplicación profesional de pintura para interiores y exteriores.",
+    slug: "pintura-general",
+    title: "Pintura en General",
+    shortDescription:
+      "Aplicamos pintura de calidad para diversas superficies, garantizando acabados duraderos y estéticos.",
+    image: service1,
+    icon: iconPintura,
     description:
       "Ofrecemos servicios completos de pintura para todo tipo de superficies. Trabajamos con materiales de alta calidad garantizando acabados duraderos y estéticamente impecables, tanto en espacios residenciales como comerciales.",
-    image: "/assets/services/general-painting.jpg",
     features: [
       "Pintura de interiores y exteriores",
       "Preparación y limpieza de superficies",
@@ -23,12 +49,46 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "plumbing",
+    slug: "sistema-drywall",
+    title: "Sistema de Drywall",
+    shortDescription:
+      "Instalamos estructuras de drywall para crear espacios funcionales y modernos con acabados precisos.",
+    image: service2,
+    icon: iconDrywall,
+    description:
+      "Construimos tabiques, cielos rasos y divisiones con sistema drywall. Soluciones rápidas, limpias y con excelente acabado para renovar o ampliar ambientes residenciales y comerciales.",
+    features: [
+      "Tabiques y divisiones interiores",
+      "Cielos rasos y techos decorativos",
+      "Instalación de perfiles y placas",
+      "Acabado y pintura final",
+    ],
+  },
+  {
+    slug: "estuco-veneciano",
+    title: "Estuco Veneciano",
+    shortDescription:
+      "Ofrecemos acabados elegantes y texturizados con estuco veneciano, un estilo único para tus espacios.",
+    image: service3,
+    icon: iconEstuco,
+    description:
+      "El estuco veneciano es una técnica artesanal que otorga un acabado lujoso y texturizado. Ideal para paredes de salones, lobbies y espacios que buscan distinción y elegancia.",
+    features: [
+      "Aplicación artesanal de estuco",
+      "Texturizados y efectos marmolados",
+      "Acabados brillantes y mate",
+      "Personalización de colores",
+    ],
+  },
+  {
+    slug: "gasfiteria",
     title: "Gasfitería",
-    shortDescription: "Instalación y reparación de sistemas de agua y gas.",
+    shortDescription:
+      "Brindamos instalación y reparación de tuberías, garantizando solidez para tu hogar o negocio.",
+    image: service4,
+    icon: iconGasfiteria,
     description:
       "Contamos con técnicos especializados en instalación, mantenimiento y reparación de tuberías, llaves de paso, desagües y sistemas de gas. Atendemos emergencias y trabajos programados.",
-    image: "/assets/services/plumbing.jpg",
     features: [
       "Instalación de tuberías",
       "Reparación de filtraciones",
@@ -37,17 +97,67 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "floor-installation",
-    title: "Instalación de Pisos",
-    shortDescription: "Colocación de cerámicos, porcelanato, madera y más.",
+    slug: "marmol-granito",
+    title: "Marmol y Granito",
+    shortDescription:
+      "Ofrecemos servicios de nivel en mármol y granito, como también el marmolizado para realizar cualquier espacio.",
+    image: service5,
+    icon: iconMarmol,
     description:
-      "Instalamos todo tipo de revestimientos para pisos con precisión y cuidado. Desde cerámicos y porcelanato hasta pisos laminados y de madera, garantizamos un acabado uniforme y de larga duración.",
-    image: "/assets/services/floor-installation.jpg",
+      "Instalamos y pulimos superficies de mármol y granito para cocinas, baños y pisos. También realizamos técnicas de marmolizado que replican la elegancia de la piedra natural a menor costo.",
     features: [
-      "Cerámicos y porcelanato",
-      "Pisos laminados y de madera",
-      "Nivelación de superficies",
-      "Sellado y terminaciones",
+      "Instalación de mármol y granito",
+      "Pulido y sellado de superficies",
+      "Marmolizado decorativo",
+      "Encimeras y revestimientos",
+    ],
+  },
+  {
+    slug: "carpinteria",
+    title: "Carpintería",
+    shortDescription:
+      "Ofrecemos trabajos de carpintería en madera con acabados precisos y funcionales.",
+    image: service6,
+    icon: iconCarpinteria,
+    description:
+      "Fabricamos e instalamos muebles, puertas, closets y revestimientos en madera. Cada proyecto es diseñado a medida para adaptarse al estilo y necesidades del cliente.",
+    features: [
+      "Muebles a medida",
+      "Puertas y ventanas de madera",
+      "Closets y vestidores",
+      "Revestimientos en madera",
+    ],
+  },
+  {
+    slug: "mayolica-porcelanato",
+    title: "Mayólica y Porcelanato",
+    shortDescription:
+      "Colocamos mayólicas y porcelanato logrando superficies resistentes, estéticas y fácil de mantener.",
+    image: service7,
+    icon: iconMayolica,
+    description:
+      "Instalamos mayólicas y porcelanato en baños, cocinas, pisos y fachadas. Garantizamos un acabado uniforme, juntas perfectas y materiales de primera calidad.",
+    features: [
+      "Colocación de mayólica y porcelanato",
+      "Nivelación y preparación de superficies",
+      "Cortes especiales y diseños",
+      "Fragüe y sellado profesional",
+    ],
+  },
+  {
+    slug: "piso-laminado-spc",
+    title: "Piso Laminado y SPC",
+    shortDescription:
+      "Instalamos pisos laminados como también de SPC muy durables y de poco mantenimiento requerido.",
+    image: service8,
+    icon: iconPiso,
+    description:
+      "Instalamos pisos laminados y SPC (Stone Plastic Composite), ideales por su resistencia al agua, durabilidad y fácil mantenimiento. Perfectos para hogares, oficinas y locales comerciales.",
+    features: [
+      "Instalación de piso laminado",
+      "Instalación de piso SPC",
+      "Preparación de subsuelo",
+      "Zócalos y terminaciones",
     ],
   },
 ];
