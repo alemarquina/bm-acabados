@@ -6,8 +6,8 @@ export default {
       colors: {
         goldenPrimary: "#E7C468",
         goldenSecondary: "#D6B55C",
-        bluePrimary: "#1E40AF",
-        blueDark: "#1A304E",
+        bluePrimary: "#112566",
+        blueDark: "#101F33",
         blueText: "#002251",
         darkText: "#4B4B4B",
         lightText: "#E8E8E8",
