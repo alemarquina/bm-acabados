@@ -1,0 +1,134 @@
+---
+import Container from "../../layouts/Container.astro";
+import SocialMedia from "../ui/SocialMedia.astro";
+import ContactMedia from "../ui/ContactMedia.astro";
+---
+
+<footer class="bg-white text-black pt-16 pb-8">
+  <Container>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8"
+    >
+      <!-- Columna 1: Marca y Redes -->
+      <div class="space-y-6 lg:col-span-3">
+        <a
+          href="/"
+          class="inline-block transition-transform hover:scale-[1.02] duration-200"
+        >
+          <img src="/logo_bm.png" class="h-16 w-auto" alt="Logo BM Acabados" />
+        </a>
+        <p class="text-sm text-black font-medium leading-relaxed max-w-[280px]">
+          Transformando espacios con acabados de excelencia desde 2008.
+        </p>
+        <div class="pt-2">
+          <SocialMedia />
+        </div>
+      </div>
+
+      <!-- Columna 2: Navegación -->
+      <div class="lg:col-span-2">
+        <h4 class="text-blueText font-bold text-lg mb-6 tracking-tight">
+          Navegar
+        </h4>
+        <ul class="space-y-3.5 text-sm">
+          <li>
+            <a
+              href="/"
+              class="text-zinc-500 hover:text-goldenPrimary transition-colors duration-200 flex items-center gap-1.5"
+            >
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a
+              href="/services"
+              class="text-slate-700 hover:text-goldenPrimary transition-colors duration-200 flex items-center gap-1.5"
+            >
+              Servicios
+            </a>
+          </li>
+          <li>
+            <a
+              href="/#contacto"
+              class="text-slate-700 hover:text-goldenPrimary transition-colors duration-200 flex items-center gap-1.5"
+            >
+              Contacto
+            </a>
+          </li>
+          <li>
+            <a
+              href="/about-us"
+              class="text-slate-700 hover:text-goldenPrimary transition-colors duration-200 flex items-center gap-1.5"
+            >
+              Sobre Nosotros
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Información de Contacto -->
+      <div class="lg:col-span-4">
+        <h4 class="text-blueText font-bold text-lg mb-6 tracking-tight">
+          Contacto
+        </h4>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <ContactMedia type="phone" />
+            <a
+              href="tel:+51932356235"
+              class="text-sm text-zinc-500 hover:text-goldenPrimary transition-colors duration-200"
+            >
+              +51 932 356 235
+            </a>
+          </div>
+          <div class="flex items-center gap-3">
+            <ContactMedia type="email" />
+            <a
+              href="mailto:bmacabadosgrp@gmail.com"
+              class="text-sm text-zinc-500 hover:text-goldenPrimary transition-colors duration-200 whitespace-nowrap"
+            >
+              bmacabadosgrp@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 4: Horarios -->
+      <div class="lg:col-span-3">
+        <h4 class="text-blueText font-bold text-lg mb-6 tracking-tight">
+          Horarios
+        </h4>
+        <ul class="space-y-3.5 text-sm text-zinc-500">
+          <li
+            class="flex justify-start space-x-6 border-b border-zinc-900 pb-2"
+          >
+            <span>Lunes - Viernes:</span>
+            <span class="text-zinc-500 font-medium">8:00 - 18:00</span>
+          </li>
+          <li
+            class="flex justify-start space-x-6 border-b border-zinc-900 pb-2"
+          >
+            <span>Sábados:</span>
+            <span class="text-zinc-500 font-medium">9:00 - 15:00</span>
+          </li>
+          <li class="flex justify-start space-x-6 pb-1">
+            <span>Domingos:</span>
+            <span class="text-zinc-500 font-medium">Cerrado</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divisor Dorado Fino -->
+    <hr class="border-goldenSecondary border-2 mt-12 mb-6" />
+
+    <!-- Derechos Reservados -->
+    <div
+      class="flex flex-col sm:flex-row justify-center items-center gap-4 text-xs text-zinc-800"
+    >
+      <p>
+        © {new Date().getFullYear()} BM Acabados. Todos los derechos reservados.
+      </p>
+    </div>
+  </Container>
+</footer>
