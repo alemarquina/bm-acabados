@@ -1,7 +1,28 @@
 ---
-const { nameButton } = Astro.props
+interface Props {
+  name?: string;
+  nameButton?: string;
+  route?: string;
+  class?: string;
+  type?: "button" | "submit" | "reset";
+}
+
+const {
+  name,
+  nameButton,
+  route,
+  class: className,
+  type = "button",
+} = Astro.props;
+const label = name || nameButton;
+const Tag = route ? "a" : "button";
 ---
 
-<button class="flex min-w-36 justify-center py-2 bg-black hover:bg-bluePrimary duration-200 rounded-full text-white">
-    {nameButton}
-</button>
+<Tag
+  href={route}
+  type={route ? undefined : type}
+  class="flex min-w-36 justify-center py-2 bg-bluePrimary hover:bg-blue-900 duration-200 rounded-full text-white font-semibold items-center text-center cursor-pointer"
+  class:list={[className]}
+>
+  {label}
+</Tag>

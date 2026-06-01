@@ -7,6 +7,11 @@ import BgHome from "../assets/home/bg_home.png";
 import worker from "../assets/home/worker.png";
 import ServiceCard from "../components/ui/ServiceCard.astro";
 import { services } from "../content/services";
+import ButtonGolden from "../components/ui/ButtonGolden.astro";
+import Stats from "../components/ui/Stats.astro";
+import WorksCarousel from "../components/ui/WorksCarousel.astro";
+import FormContact from "../components/ui/FormContact.astro";
+import ButtonBlue from "../components/ui/ButtonBlue.astro";
 ---
 
 <Layout title="BM Acabados">
@@ -16,11 +21,14 @@ import { services } from "../content/services";
       src={BgHome}
       class="h-96 2xl:h-[470px] object-cover w-full brightness-75"
       alt="Imagen de Fondo"
-      loading="eager"/>
+      loading="eager"
+    />
     <Container class="absolute inset-0">
       <div
-        class="h-full flex flex-col justify-center space-y-5 lg:space-y-6 text-center">
-        <h1 class="text-2xl text-white md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold font-encode-sans"
+        class="h-full flex flex-col justify-center space-y-5 lg:space-y-6 text-center"
+      >
+        <h1
+          class="text-2xl text-white md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold font-encode-sans"
         >
           EN <span
             class="text-goldenPrimary text-2xl md:text-6xl lg:text-7xl 2xl:text-8xl"
@@ -37,25 +45,15 @@ import { services } from "../content/services";
           estética.
         </p>
         <div class="flex mx-auto space-x-3">
-          <a
-            href="#contacto"
-            class="flex min-w-36 justify-center py-2 bg-goldenSecondary hover:bg-goldenPrimary animate-pulse duration-200 rounded-full text-white"
-          >
-            Contactar
-          </a>
-          <a
-            href="/servicios"
-            class="flex min-w-36 justify-center py-2 bg-zinc-100 hover:bg-white duration-200 rounded-full text-zinc-800"
-          >
-            Ver Servicios
-          </a>
+          <ButtonGolden nameButton="Contactar" route="#contacto" />
+          <ButtonBlue nameButton="Ver Servicios" route="/services" />
         </div>
       </div>
     </Container>
   </section>
 
   <!-- About Us -->
-  <section id="about-us">
+  <section id="about-us" class="bg-zinc-100">
     <Container>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14"
@@ -77,14 +75,17 @@ import { services } from "../content/services";
             alt="Imagen de Trabajador"
           />
         </div>
-      </div>            
+      </div>
     </Container>
     <div class="h-2 bg-goldenPrimary"></div>
   </section>
 
-  <section id="cards-services" class="px-4 sm:px-6 md:px-8 bg-white">
+  <section
+    id="cards-services"
+    class="px-4 sm:px-6 md:px-8 bg-white pb-4 sm:pb-14"
+  >
     <Container>
-      <div class="pt-4 md:pt-20 pb-8 space-y-4">
+      <div class="flex flex-col items-center pt-4 md:pt-20 pb-8 space-y-12">
         <div class="md:w-3/5 mx-auto text-center space-y-4">
           <MainTitle nameTitle="Nuestros Servicios" class="mx-auto" />
           <p class="text-zinc-800">
@@ -93,19 +94,61 @@ import { services } from "../content/services";
             y mucho más
           </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 justify-items-center">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 justify-items-center"
+        >
           {
-            services.map((service) => (
-              <ServiceCard
-                slug={service.slug}
-                title={service.title}
-                shortDescription={service.shortDescription}
-                image={service.image}
-                icon={service.icon}
-              />
-            ))
+            services
+              .slice(0, 6)
+              .map((service) => (
+                <ServiceCard
+                  slug={service.slug}
+                  title={service.title}
+                  shortDescription={service.shortDescription}
+                  image={service.image}
+                  icon={service.icon}
+                />
+              ))
           }
         </div>
+        <div>
+          <ButtonBlue nameButton="Más servicios" route="/services" />
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Stats Data BM  -->
+  <section class="w-full bg-goldenPrimary py-5 md:py-8">
+    <Container>
+      <Stats />
+    </Container>
+  </section>
+
+  <!-- Carousel Servicios -->
+  <section id="works">
+    <div
+      id="works"
+      class="py-10 md:py-20 bg-zinc-100 border-t border-zinc-100 overflow-hidden"
+    >
+      <Container>
+        <div class="space-y-8 relative">
+          <div class="flex flex-col items-center sm:items-start">
+            <MainTitle nameTitle="Servicios Realizados" />
+          </div>
+          <WorksCarousel />
+        </div>
+      </Container>
+    </div>
+    <div class="h-2 bg-goldenSecondary"></div>
+  </section>
+
+  <!-- Contáctanos -->
+  <section id="contacto" class="py-14 md:py-20 lg:py-32 bg-bluePrimary">
+    <Container>
+      <div class="flex flex-col items-center space-y-12">
+        <MainTitle nameTitle="Contáctanos" class="text-white" />
+        <FormContact />
       </div>
     </Container>
   </section>
