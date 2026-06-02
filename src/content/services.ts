@@ -11,14 +11,14 @@ import service7 from "../assets/services/service-7.webp";
 import service8 from "../assets/services/service-8.webp";
 
 // Íconos de servicios
-import iconPintura from "../assets/services/icon-pintura.png";
-import iconDrywall from "../assets/services/icon-drywall.png";
-import iconEstuco from "../assets/services/icon-estuco.png";
-import iconGasfiteria from "../assets/services/icon-gasfiteria.png";
-import iconMarmol from "../assets/services/icon-marmol-granito.png";
-import iconCarpinteria from "../assets/services/icon-carpinteria.png";
-import iconMayolica from "../assets/services/icon-mayolica-porcelanato.png";
-import iconPiso from "../assets/services/icon-piso-laminado-spc.png";
+import iconPintura from "../assets/services/icon-pintura.webp";
+import iconDrywall from "../assets/services/icon-drywall.webp";
+import iconEstuco from "../assets/services/icon-estuco.webp";
+import iconGasfiteria from "../assets/services/icon-gasfiteria.webp";
+import iconMarmol from "../assets/services/icon-marmol-granito.webp";
+import iconCarpinteria from "../assets/services/icon-carpinteria.webp";
+import iconMayolica from "../assets/services/icon-mayolica-porcelanato.webp";
+import iconPiso from "../assets/services/icon-piso-laminado-spc.webp";
 
 export interface Service {
   slug: string;
