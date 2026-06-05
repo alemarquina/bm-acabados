@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  benefit?: string;
+  image?: ImageMetadata | string | any;
+  alt?: string;
+  class?: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  benefit,
+  image,
+  alt = "",
+  class: className = "",
+  width = 40,
+  height = 40,
+} = Astro.props;
+---
+
+<article
+  class={`bg-goldenPrimary flex flex-col items-center justify-center p-6 rounded-xl hover:-translate-y-2 duration-150 transition text-white ${className}`}
+>
+  {
+    image && (
+      <Image
+        src={image}
+        alt={alt}
+        width={width}
+        height={height}
+        class="object-contain"
+      />
+    )
+  }
+  {
+    benefit && (
+      <h5 class="text-white whitespace-pre-line text-center text-xs lg:text-base">
+        {benefit}
+      </h5>
+    )
+  }
+  <slot />
+</article>

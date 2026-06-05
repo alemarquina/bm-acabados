@@ -1,0 +1,18 @@
+---
+interface Props {
+  Icon: any;
+  title?: string;
+  descrip?: string;
+  class?: string;
+}
+
+const { Icon, title, descrip, class: className = "" } = Astro.props;
+---
+
+<article
+  class={`text-xs text-center sm:text-sm bg-whiteBg rounded-2xl flex flex-col items-center justify-center w-full max-w-[270px] sm:max-w-xs p-5 sm:p-6 shadow-sm border border-zinc-100/50 transition-transform duration-300 hover:scale-[1.02] ${className}`}
+>
+  <Icon class="text-goldenPrimary size-7 sm:size-8 mb-2" />
+  <h5 class="font-bold text-sm sm:text-base text-blueText">{title}</h5>
+  <p class="text-zinc-500 leading-relaxed mt-1">{descrip}</p>
+</article>

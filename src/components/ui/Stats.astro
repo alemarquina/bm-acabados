@@ -1,46 +1,56 @@
+---
+import YellowCard from "./YellowCard.astro";
+
+interface Props {
+  isCard?: boolean;
+}
+
+const { isCard = false } = Astro.props;
+
+const stats = [
+  { target: "15", suffix: "+", label: "Años de experiencia" },
+  { target: "155", suffix: "+", label: "Trabajos Completados" },
+  { target: "96", suffix: "%", label: "Clientes satisfechos" },
+];
+---
+
 <div
   id="stats-container"
-  class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center"
+  class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center text-center w-full"
 >
-  <div class="flex flex-col items-center">
-    <span
-      class="text-3xl md:text-4xl font-extrabold tracking-tight text-white stats-counter"
-      data-target="15"
-      data-suffix="+"
-    >
-      15+
-    </span>
-    <span class="text-sm md:text-base mt-2 text-white">Años de experiencia</span
-    >
-  </div>
-  <div class="flex flex-col items-center">
-    <span
-      class="text-3xl md:text-4xl font-extrabold tracking-tight text-white stats-counter"
-      data-target="155"
-      data-suffix="+"
-    >
-      155+
-    </span>
-    <span class="text-sm md:text-base mt-2 text-white"
-      >Trabajos Completados</span
-    >
-  </div>
-  <div class="flex flex-col items-center">
-    <span
-      class="text-3xl md:text-4xl font-extrabold tracking-tight text-white stats-counter"
-      data-target="96"
-      data-suffix="%"
-    >
-      96%
-    </span>
-    <span class="text-sm md:text-base mt-2 text-white"
-      >Clientes satisfechos</span
-    >
-  </div>
+  {
+    stats.map((stat) =>
+      isCard ? (
+        <YellowCard class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-none h-auto py-8">
+          <span
+            class="text-3xl md:text-4xl font-extrabold tracking-tight text-white stats-counter"
+            data-target={stat.target}
+            data-suffix={stat.suffix}
+          >
+            {stat.target}
+            {stat.suffix}
+          </span>
+          <span class="text-sm md:text-base mt-2 text-white">{stat.label}</span>
+        </YellowCard>
+      ) : (
+        <div class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-none h-auto py-4 flex flex-col items-center justify-center text-center">
+          <span
+            class="text-3xl md:text-4xl font-extrabold tracking-tight text-white stats-counter"
+            data-target={stat.target}
+            data-suffix={stat.suffix}
+          >
+            {stat.target}
+            {stat.suffix}
+          </span>
+          <span class="text-sm md:text-base mt-2 text-white">{stat.label}</span>
+        </div>
+      ),
+    )
+  }
 </div>
 
 <script>
-  const DURATION = 1200; // 1.2 segundos
+  const DURATION = 1200;
 
   function animateCounters(
     entries: IntersectionObserverEntry[],
