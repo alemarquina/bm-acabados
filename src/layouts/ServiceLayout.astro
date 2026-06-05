@@ -1,84 +1,159 @@
 ---
-import '../styles/home.css';
+import '../styles/global.css';
 import Layout from "./Layout.astro";
 import Container from "./Container.astro";
-import MainTitle from "../components/ui/MainTitle.astro";
 import type { Service } from "../content/services";
 import { Image } from "astro:assets";
+import ServiceTitleHeader from "../components/ui/ServiceTitleHeader.astro";
 
 interface Props {
   service: Service;
 }
 
 const { service } = Astro.props;
+
+// Helper para parsear marcas básicas de negrita de Markdown en los strings
+const formatDescription = (text: string) => {
+  if (!text) return [];
+  return text
+    .split('\n\n')
+    .map(p => p.replace(/\*\*(.*?)\*\*/g, '<strong class="font-extrabold text-blueText">$1</strong>'));
+};
 ---
 
 <Layout title={`${service.title} — BM Acabados`}>
-  <!-- Hero del servicio -->
-  <section class="relative w-full bg-blueDark py-16">
-    <Container>
-      <div class="flex flex-col items-start space-y-3">
-        <a
-          href="/services"
-          class="text-goldenSecondary text-sm hover:underline flex items-center gap-1"
+  <!-- Hero del servicio con imagen de fondo -->
+  <section class="relative w-full h-[180px] md:h-[250px] flex items-center overflow-hidden px-6 min-[620px]:px-0">
+    {service.backgroundImage ? (
+      <Image
+        src={service.backgroundImage}
+        alt={service.title}
+        class="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={640}
+        loading="eager"
+      />
+    ) : (
+      <div class="absolute inset-0 bg-blueDark" />
+    )}    
+    <div class="absolute inset-0 bg-black/60 z-10" />
+
+    <Container class="relative z-20 w-full">
+      <div class="flex flex-col items-start space-y-4">
+        <!-- Breadcrumbs -->
+        <nav class="text-xs md:text-sm font-semibold tracking-wide flex items-center gap-2 text-white/95">
+          <a href="/services" class="hover:text-goldenSecondary transition-colors">Servicios</a>
+          <span class="text-white/40">&gt;</span>
+          <span class="text-goldenSecondary">{service.title}</span>
+        </nav>
+        
+        <!-- Título contorneado gigante -->
+        <h1 
+          class="text-3xl md:text-6xl lg:text-7xl font-extrabold text-transparent tracking-wider uppercase select-none drop-shadow-sm leading-tight"
+          style="-webkit-text-stroke: 1px rgba(255, 255, 255, 0.85);"
         >
-          ← Volver a Servicios
-        </a>
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white">
           {service.title}
         </h1>
-        <p class="text-white/80 max-w-xl">
-          {service.shortDescription}
-        </p>
       </div>
     </Container>
   </section>
 
-  <!-- Contenido principal -->
-  <section class="py-12">
+  <!-- Cuerpo de Detalles del Servicio -->
+  <section class="py-16 md:py-28 bg-white overflow-hidden">
     <Container>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        <!-- Imagen -->
-        <div class="rounded-xl overflow-hidden shadow-md">
-          <Image
-            src={service.image}
-            alt={service.title}
-            width={600}
-            height={350}
-            class="w-full h-72 object-cover"
-            loading="eager"
+      <div class="grid grid-cols-1 min-[620px]:grid-cols-12 gap-8 md:gap-12 items-start">
+        
+        <!-- Columna Izquierda: Imágenes -->
+        <div class="px-6 min-[620px]:px-0 min-[620px]:col-span-5 w-full flex flex-col">
+          <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+            <Image
+              src={service.detailImage || service.image}
+              alt={service.title}
+              class="w-full h-auto object-cover max-h-[380px]"
+              width={600}
+              height={400}
+              loading="eager"
+            />
+          </div>
+
+          <!-- Galería de Miniaturas -->
+          {service.gallery && service.gallery.length > 0 && (
+            <div class="grid grid-cols-2 gap-5 mt-4">
+              {service.gallery.slice(0, 2).map((img, index) => (
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-100 hover:scale-[1.02] hover:shadow-lg transition-all duration-300">
+                  <Image
+                    src={img}
+                    alt={`Galería ${service.title} ${index + 1}`}
+                    class="w-full h-full object-cover"
+                    width={300}
+                    height={225}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <!-- Columna Derecha: Contenido de Texto -->
+        <div class="min-[620px]:col-span-7 px-6 min-[620px]:px-0 flex flex-col space-y-4">                              
+          <ServiceTitleHeader 
+            bgTitle={service.title} 
+            title={service.subtitle || service.shortDescription} 
           />
+
+          <!-- Párrafos descriptivos formateados con negritas -->
+          <div class="flex flex-col space-y-2 text-slate-600 relative z-10 pl-1">
+            {service.description ? (
+              formatDescription(service.description).map((para) => (
+                <p set:html={para} class="leading-relaxed text-base" />
+              ))
+            ) : (
+              <p class="leading-relaxed text-base">{service.shortDescription}</p>
+            )}
+          </div>
         </div>
 
-        <!-- Descripción y características -->
-        <div class="flex flex-col space-y-6">
-          {service.description && (
-            <div>
-              <MainTitle nameTitle="Descripción" />
-              <p class="mt-2 text-darkText">{service.description}</p>
-            </div>
-          )}
-
-          {service.features && service.features.length > 0 && (
-            <div>
-              <MainTitle nameTitle="¿Qué incluye?" />
-              <ul class="mt-2 space-y-2">
-                {
-                  service.features.map((feature) => (
-                    <li class="flex items-start gap-2 text-darkText">
-                      <span class="text-goldenPrimary font-bold">✓</span>
-                      {feature}
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          )}
-        </div>
       </div>
     </Container>
   </section>
 
-  <!-- Slot para contenido extra opcional por servicio -->
+  <!-- Sección de Uso y Características -->
+  {service.characteristics && service.characteristics.length > 0 && (
+    <section class="py-16 md:py-24 bg-slate-50 border-t border-slate-100 overflow-hidden">
+      <Container>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 min-[620px]:px-0">
+          
+          <!-- Título y decoraciones reutilizando el componente modular, colocado como primer item de la grilla -->
+          <ServiceTitleHeader 
+            bgTitle={service.title} 
+            title="Uso y<br />Características" 
+            class="pt-4 h-full"
+          />
+
+          <!-- Tarjetas de características en las siguientes posiciones de la grilla -->
+          {service.characteristics.map((charText) => (
+            <div 
+              class="bg-goldenPrimary p-6 md:p-5 flex flex-col justify-start min-h-[160px] relative hover:bg-goldenSecondary transition-all duration-300 group shadow-sm border border-goldenSecondary/40 h-full rounded-2xl"
+              style="clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);"
+            >
+              <div>
+                <Image 
+                  src={service.icon} 
+                  alt={`Icono ${service.title}`} 
+                  class="w-9 h-9 object-contain mb-6 opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
+                  width={36} 
+                  height={36}
+                />
+              </div>
+              <p class="text-white font-semibold text-sm md:text-base leading-relaxed">
+                {charText}
+              </p>
+            </div>
+          ))}
+
+        </div>
+      </Container>
+    </section>
+  )}  
   <slot />
 </Layout>

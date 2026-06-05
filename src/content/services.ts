@@ -10,6 +10,12 @@ import service6 from "../assets/services/service-6.webp";
 import service7 from "../assets/services/service-7.webp";
 import service8 from "../assets/services/service-8.webp";
 
+// Nuevos assets específicos para Pintura en General
+import bgPintura from "../assets/services/pintura-general/background-pintura.webp";
+import pintura1 from "../assets/services/pintura-general/pintura-1.webp";
+import pintura2 from "../assets/services/pintura-general/pintura-2.webp";
+import pintura3 from "../assets/services/pintura-general/pintura-3.webp";
+
 // Íconos de servicios
 import iconPintura from "../assets/services/icon-pintura.webp";
 import iconDrywall from "../assets/services/icon-drywall.webp";
@@ -26,9 +32,13 @@ export interface Service {
   shortDescription: string;
   image: ImageMetadata;
   icon: ImageMetadata;
-  // Campos opcionales para páginas de detalle
   description?: string;
-  features?: string[];
+  features?: string[];  
+  backgroundImage?: ImageMetadata;
+  detailImage?: ImageMetadata;
+  gallery?: ImageMetadata[];
+  subtitle?: string;
+  characteristics?: string[];
 }
 
 export const services: Service[] = [
@@ -39,13 +49,24 @@ export const services: Service[] = [
       "Aplicamos pintura de calidad para diversas superficies, garantizando acabados duraderos y estéticos.",
     image: service1,
     icon: iconPintura,
+    backgroundImage: bgPintura,
+    detailImage: pintura1,
+    gallery: [pintura2, pintura3],
+    subtitle: "VUELVE A DARLE COLOR A TU PROPIEDAD",
     description:
-      "Ofrecemos servicios completos de pintura para todo tipo de superficies. Trabajamos con materiales de alta calidad garantizando acabados duraderos y estéticamente impecables, tanto en espacios residenciales como comerciales.",
+      "Ofrecemos pintura especializada para fierro, madera, y otras superficies utilizando materiales de calidad que aseguran durabilidad y un acabado impecable ya sea para proteger o embellecer tus espacios.\n\nEn BM Acabados ofrecemos un **servicio integral de pintura tanto en interiores como en exteriores. Realizamos todo el proceso desde la restauración de grietas, hasta el pintado sólido.",
     features: [
       "Pintura de interiores y exteriores",
       "Preparación y limpieza de superficies",
       "Aplicación de selladores y bases",
       "Garantía de trabajo terminado",
+    ],
+    characteristics: [
+      "Limpiamos y lijamos para asegurar una base adecuada para la pintura.",
+      "Rellenamos imperfecciones y grietas para lograr superficies lisas y perfectas antes de pintar.",
+      "Tratamos superficies porosas para prevenir filtraciones y mejorar el acabado final.",
+      "Aplicamos una capa base para mejorar la adherencia y duración de la pintura.",
+      "Permite renovar y transformar ambientes de manera económica.",
     ],
   },
   {
