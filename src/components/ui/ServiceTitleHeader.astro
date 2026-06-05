@@ -1,0 +1,30 @@
+---
+interface Props {
+  bgTitle: string;
+  title: string;
+  class?: string;
+}
+
+const { bgTitle, title, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "border-l-4 border-goldenPrimary pl-6 py-4 relative flex flex-col justify-between space-y-24 select-none",
+    className,
+  ]}
+>
+  <!-- Texto decorativo de fondo contorneado, vertical (salto de línea por palabra) con outline, controlado para respetar el Container -->
+  <div
+    class="absolute top-0 left-6 text-4xl font-black text-transparent select-none pointer-events-none font-encode-sans uppercase z-0 tracking-wider leading-[0.90]"
+    style="-webkit-text-stroke: 1px rgba(16, 31, 51, 0.12);"
+  >
+    {bgTitle.split(" ").map((word) => <div>{word}</div>)}
+  </div>
+
+  <!-- Título/Subtítulo real, soporta etiquetas HTML como <br /> -->
+  <h2
+    class="relative z-10 text-2xl font-black text-blueText uppercase leading-tight tracking-tight max-w-xl"
+    set:html={title}
+  />
+</div>
