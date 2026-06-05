@@ -16,16 +16,17 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
 
 <Layout title="BM Acabados">
   <!-- Hero -->
-  <section id="home" class="relative w-full">
+  <section id="home" class="relative w-full" data-scroll-reveal="">
     <Image
       src={BgHome}
       class="h-96 2xl:h-[470px] object-cover w-full brightness-75"
       alt="Imagen de Fondo"
       loading="eager"
     />
-    <Container class="absolute inset-0">
+    <Container class="absolute inset-0 animate__animated">
       <div
         class="h-full flex flex-col justify-center space-y-5 lg:space-y-6 text-center"
+        data-reveal-header
       >
         <h1
           class="text-2xl text-white md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold font-encode-sans"
@@ -53,16 +54,17 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
   </section>
 
   <!-- About Us -->
-  <section id="about-us" class="bg-zinc-100">
+  <section id="about-us" class="bg-zinc-100" data-scroll-reveal>
     <Container>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14"
+        data-reveal-header
       >
         <div
           class="flex flex-col justify-center items-center space-y-2 sm:items-start sm:order-2 text-center sm:text-left"
         >
           <MainTitle nameTitle="¿Quienes Somos?" />
-          <p>
+          <p class="">
             Somos BM Acabados y nos enfocamos en entregar acabados de alta
             calidad a construcciones, combinando experiencia, profesionalismo y
             un compromiso constante con la satisfacción de nuestros clientes.
@@ -82,11 +84,15 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
 
   <section
     id="cards-services"
-    class="px-4 sm:px-6 md:px-8 bg-white pb-4 sm:pb-14"
+    class="px-4 sm:px-6 md:px-8 bg-white pb-4 sm:pb-14 overflow-hidden"
+    data-scroll-reveal
   >
     <Container>
       <div class="flex flex-col items-center pt-4 md:pt-20 pb-8 space-y-12">
-        <div class="md:w-3/5 mx-auto text-center space-y-4">
+        <div
+          id="services-header"
+          class="md:w-3/5 mx-auto text-center space-y-4"
+        >
           <MainTitle nameTitle="Nuestros Servicios" class="mx-auto" />
           <p class="text-zinc-800">
             Realizamos multiservicios como Pintura en General, Sistema de
@@ -98,9 +104,8 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 justify-items-center"
         >
           {
-            services
-              .slice(0, 6)
-              .map((service) => (
+            services.slice(0, 6).map((service) => (
+              <div class="service-card-wrapper" data-reveal-item>
                 <ServiceCard
                   slug={service.slug}
                   title={service.title}
@@ -108,18 +113,23 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
                   image={service.image}
                   icon={service.icon}
                 />
-              ))
+              </div>
+            ))
           }
         </div>
-        <div>
-          <ButtonBlue nameButton="Más servicios" route="/services" />
+        <div id="services-button" data-reveal-button>
+          <ButtonBlue
+            nameButton="Más servicios"
+            route="/services"
+            data-reveal-header
+          />
         </div>
       </div>
     </Container>
   </section>
 
   <!-- Stats Data BM  -->
-  <section class="w-full bg-goldenPrimary py-5 md:py-8">
+  <section id="stats-home" class="w-full bg-goldenPrimary py-2 md:py-3">
     <Container>
       <Stats />
     </Container>
@@ -130,13 +140,14 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
     <div
       id="works"
       class="py-10 md:py-20 bg-zinc-100 border-t border-zinc-100 overflow-hidden"
+      data-scroll-reveal
     >
       <Container>
-        <div class="space-y-8 relative">
+        <div class="space-y-8 relative" data-reveal-header>
           <div class="flex flex-col items-center sm:items-start">
-            <MainTitle nameTitle="Servicios Realizados" />
+            <MainTitle nameTitle="Servicios Realizados" data-reveal-item />
           </div>
-          <WorksCarousel />
+          <WorksCarousel data-reveal-item />
         </div>
       </Container>
     </div>
@@ -144,11 +155,19 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
   </section>
 
   <!-- Contáctanos -->
-  <section id="contacto" class="py-14 md:py-20 lg:py-32 bg-bluePrimary">
+  <section
+    id="contacto"
+    class="py-14 md:py-20 lg:py-32 bg-bluePrimary"
+    data-scroll-reveal
+  >
     <Container>
-      <div class="flex flex-col items-center space-y-12">
-        <MainTitle nameTitle="Contáctanos" class="text-white" />
-        <FormContact />
+      <div class="flex flex-col items-center space-y-12" data-reveal-header>
+        <MainTitle
+          nameTitle="Contáctanos"
+          class="text-white"
+          data-reveal-item
+        />
+        <FormContact data-reveal-item />
       </div>
     </Container>
   </section>

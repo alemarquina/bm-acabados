@@ -6,7 +6,7 @@ import ServiceCard from "../components/ui/ServiceCard.astro";
 import { services } from "../content/services";
 import MainTitle from "../components/ui/MainTitle.astro";
 import ButtonGolden from "../components/ui/ButtonGolden.astro";
-import BenefitBm from "../components/ui/BenefitBm.astro";
+import YellowCard from "../components/ui/YellowCard.astro";
 import BenefitImage1 from "../assets/services/benefit_1.webp";
 import BenefitImage2 from "../assets/services/benefit_2.webp";
 import BenefitImage3 from "../assets/services/benefit_3.webp";
@@ -14,11 +14,10 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
 ---
 
 <Layout title="Servicios — BM Acabados">
-  <!-- Banner Premium Minimalista (Full Width) -->
   <section
     class="relative overflow-hidden bg-gradient-to-br bg-bluePrimary via-zinc-900 to-blueDark py-6 sm:py-10 border-b border-zinc-800 text-white w-full"
+    data-scroll-reveal
   >
-    <!-- Luces de fondo (glow accents) -->
     <div
       class="absolute -right-20 -top-20 w-80 h-80 bg-goldenPrimary/5 rounded-full blur-3xl pointer-events-none"
     >
@@ -29,8 +28,10 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
     </div>
 
     <Container>
-      <!-- Contenido principal -->
-      <div class="relative z-10 max-w-2xl mx-auto text-center space-y-4">
+      <div
+        class="relative z-10 max-w-2xl mx-auto text-center space-y-4"
+        data-reveal-header
+      >
         <span
           class="text-goldenSecondary font-semibold tracking-widest text-[0.7rem] uppercase font-poppins bg-white/5 border border-white/10 py-1 px-3 rounded-full backdrop-blur-sm shadow-sm inline-block"
         >
@@ -58,10 +59,11 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
 
   <!-- Listado de Servicios -->
   <section>
-    <div class="py-14 sm:py-20 bg-zinc-50 min-h-screen">
+    <div class="py-14 sm:py-20 bg-zinc-50 min-h-screen" data-scroll-reveal>
       <Container>
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center"
+          data-reveal-header
         >
           {
             services.map((service) => (
@@ -81,9 +83,12 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
   </section>
 
   <section>
-    <div class="bg-bluePrimary">
+    <div class="bg-bluePrimary" data-scroll-reveal>
       <Container>
-        <div class="flex flex-col items-center justify-center space-y-8 py-12">
+        <div
+          class="flex flex-col items-center justify-center space-y-8 py-12"
+          data-reveal-header
+        >
           <div>
             <MainTitle
               nameTitle="¡Contáctanos para hacer una visita técnica!"
@@ -102,33 +107,37 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
             </p>
           </div>
           <div
-            class="grid grid-cols-1 gap-4 min-[425px]:grid-cols-2 min-[425px]:gap-8 md:grid-cols-4 xl:gap-12 items-center justify-center"
+            class="grid grid-cols-1 gap-4 min-[425px]:grid-cols-2 min-[425px]:gap-6 md:grid-cols-4 xl:gap-12 items-center justify-center"
           >
-            <BenefitBm
+            <YellowCard
               benefit="Calidad\ngarantizada"
               image={BenefitImage1}
               alt="Icon BM"
+              class="h-24 w-36 lg:h-32 lg:w-52"
             />
-            <BenefitBm
+            <YellowCard
               benefit="Entrega\npuntual"
               image={BenefitImage2}
               alt="Icon BM"
               width={50}
               height={50}
+              class="h-24 w-36 lg:h-32 lg:w-52"
             />
-            <BenefitBm
+            <YellowCard
               benefit="Asesoramiento\nintegral"
               image={BenefitImage3}
               alt="Icon BM"
               width={60}
               height={60}
+              class="h-24 w-36 lg:h-32 lg:w-52"
             />
-            <BenefitBm
+            <YellowCard
               benefit="Resultados\nduraderos"
               image={BenefitImage4}
               alt="Icon BM"
               width={50}
               height={50}
+              class="h-24 w-36 lg:h-32 lg:w-52"
             />
           </div>
         </div>

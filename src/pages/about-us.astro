@@ -1,57 +1,178 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../layouts/Container.astro";
+import { Image } from "astro:assets";
+import TrajectoryImage from "../assets/about_us/trajectory.png";
+import WorkerAboutUs from "../assets/about_us/worker-about-us.webp";
+import Stats from "../components/ui/Stats.astro";
 import MainTitle from "../components/ui/MainTitle.astro";
+import WhiteCard from "../components/ui/WhiteCard.astro";
+import { ClockCheck, HouseHeart, Sparkles, UserStar } from "lucide-astro";
+import ButtonGolden from "../components/ui/ButtonGolden.astro";
+import ButtonBlue from "../components/ui/ButtonBlue.astro";
 ---
 
 <Layout title="Nosotros — BM Acabados">
   <!-- Header -->
-  <section class="w-full bg-blueDark py-16">
-    <Container>
-      <h1 class="text-3xl md:text-5xl font-extrabold text-white">
+  <section class="w-full bg-bluePrimary py-6 md:py-12" data-scroll-reveal>
+    <Container data-reveal-header>
+      <h1
+        class="text-xl md:text-2xl font-extrabold text-white text-center"
+        data-reveal-item
+      >
         ¿Quiénes <span class="text-goldenSecondary">Somos?</span>
       </h1>
     </Container>
   </section>
 
-  <!-- Contenido -->
-  <section class="py-14">
+  <!-- Trayectoria -->
+  <section id="trajectory" class="py-14 md:py-28 bg-white" data-scroll-reveal>
     <Container>
-      <div class="flex flex-col space-y-8 max-w-2xl">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+        data-reveal-header
+      >
+        <!-- Columna Izquierda: Texto -->
+        <div class="space-y-4">
+          <h2
+            class="text-blueDark font-extrabold text-2xl md:text-2xl tracking-tight"
+          >
+            Trayectoria
+          </h2>
+          <div class="w-40 h-[2px] bg-goldenPrimary mb-6"></div>
+          <p
+            class="text-zinc-600 leading-relaxed text-sm sm:text-base font-medium"
+          >
+            Desde 2013 nos hemos dedicado a brindar servicios especializados en
+            acabados y revestimientos de construcción, estableciéndonos en el
+            mercado gracias a nuestro compromiso con la excelencia y la
+            innovación.
+          </p>
+        </div>
         <div>
-          <MainTitle nameTitle="Nuestra Historia" />
-          <p class="mt-2 text-darkText">
-            Somos BM Acabados, una empresa dedicada a ofrecer servicios de acabados
-            y revestimientos de alta calidad. Nos enfocamos en cada detalle para
-            garantizar resultados que superen las expectativas de nuestros clientes.
+          <div class="relative rounded-2xl overflow-hidden w-full group">
+            <Image
+              src={TrajectoryImage}
+              alt="Trayectoria BM Acabados"
+              class="h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <span
+              class="absolute bottom-4 left-4 text-white font-semibold italic text-sm sm:text-base tracking-wide drop-shadow-md select-none"
+            >
+              Transforma tus espacios
+            </span>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Estadísticas -->
+  <section id="stats-about-us" class="pb-16 md:pt-16 md:pb-32">
+    <Container class="px-10">
+      <Stats isCard={true} />
+    </Container>
+  </section>
+
+  <section
+    id="customer-stats"
+    class="relative bg-bluePrimary pt-20 pb-0 overflow-hidden"
+    data-scroll-reveal
+  >
+    <Container>
+      <div
+        class="flex flex-col items-center justify-center space-y-10 lg:space-y-14"
+        data-reveal-header
+      >
+        <!-- Encabezado -->
+        <div class="text-center text-white space-y-6 max-w-2xl mx-auto px-4">
+          <MainTitle
+            nameTitle="Compromiso con nuestros clientes"
+            class="text-white"
+          />
+          <p class="text-sm sm:text-base text-zinc-300">
+            En cada proyecto, nos comprometemos a ofrecer soluciones
+            profesionales en acabados y revestimientos que superen tus
+            expectativas.
           </p>
         </div>
 
-        <div>
-          <MainTitle nameTitle="Nuestra Misión" />
-          <p class="mt-2 text-darkText">
-            Brindar servicios especializados en acabados con profesionalismo,
-            puntualidad y materiales de primera calidad, combinando funcionalidad
-            y estética en cada proyecto.
+        <!-- Grilla de Tarjetas -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pb-16 lg:pb-24 justify-items-center"
+        >
+          <WhiteCard
+            Icon={Sparkles}
+            title="Calidad garantizada"
+            descrip="Utilizamos materiales de primera y técnicas profesionales para acabados duraderos y estéticos."
+          />
+          <WhiteCard
+            Icon={ClockCheck}
+            title="Entrega puntual"
+            descrip="En BM Acabados cumplimos con los plazos acordados, respetando tu tiempo y tu planificación."
+          />
+          <WhiteCard
+            Icon={UserStar}
+            title="Asesoramiento"
+            descrip="Te asesoramos en cada proyecto según tus necesidades, estilo y presupuesto."
+          />
+          <WhiteCard
+            Icon={HouseHeart}
+            title="Resultados Duraderos"
+            descrip="Nuestros trabajos resisten el paso del tiempo, manteniendo su apariencia y funcionalidad."
+          />
+        </div>
+      </div>
+    </Container>
+
+    <div
+      class="absolute inset-x-0 bottom-0 pointer-events-none hidden lg:block h-full z-0"
+    >
+      <Container class="relative h-full">
+        <div class="absolute bottom-0 lg:-left-24 xl:-left-48 2xl:-left-64">
+          <Image
+            src={WorkerAboutUs}
+            alt="Trabajador BM Acabados"
+            class="max-h-[300px] xl:max-h-[440px] w-auto object-contain block"
+            loading="lazy"
+          />
+        </div>
+      </Container>
+    </div>
+
+    <div class="lg:hidden flex justify-center w-full mt-2">
+      <Image
+        src={WorkerAboutUs}
+        alt="Trabajador BM Acabados"
+        class="max-h-[200px] sm:max-h-[360px] w-auto object-contain block"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <section id="contact-about-us" class="bg-goldenPrimary" data-scroll-reveal>
+    <Container>
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 items-center justify-between py-4 space-y-6 sm:py-10"
+        data-reveal-header
+      >
+        <div
+          class="text-center lg:text-left text-white space-y-4 mx-auto sm:max-w-sm lg:max-w-none"
+        >
+          <MainTitle
+            nameTitle="¡Contáctanos ahora mismo!"
+            class="text-white font-bold lg:text-2xl"
+          />
+          <p>
+            Contáctanos hoy mismo y descubre cómo podemos hacer realidad tu
+            proyecto con la calidad y profesionalismo que nos caracteriza.
           </p>
         </div>
-
-        <div>
-          <MainTitle nameTitle="Nuestros Valores" />
-          <ul class="mt-2 space-y-2 text-darkText">
-            <li class="flex items-start gap-2">
-              <span class="text-goldenPrimary font-bold">✓</span> Compromiso con la calidad
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-goldenPrimary font-bold">✓</span> Puntualidad y responsabilidad
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-goldenPrimary font-bold">✓</span> Trato cercano y honesto
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-goldenPrimary font-bold">✓</span> Mejora continua
-            </li>
-          </ul>
+        <div
+          class="flex flex-col min-[430px]:flex-row items-center justify-center lg:justify-end lg:justify-self-end w-full space-y-4 min-[430px]:space-y-0 min-[430px]:space-x-4"
+        >
+          <ButtonGolden class="border border-white" nameButton="Contactar" />
+          <ButtonBlue nameButton="Ver Servicios" />
         </div>
       </div>
     </Container>

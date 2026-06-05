@@ -41,3 +41,17 @@ span {
 a {
     font-size: 0.95rem;
 }
+
+/* Scroll Reveal - Initial invisible state only if JS is enabled */
+.js-enabled [data-reveal-header] {
+    opacity: 0;
+    transform: translateY(32px);
+}
+.js-enabled [data-reveal-item] {
+    opacity: 0;
+    transform: translateY(48px);
+}
+.js-enabled [data-reveal-button] {
+    opacity: 0;
+    transform: translateY(24px);
+}
