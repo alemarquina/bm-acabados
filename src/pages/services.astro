@@ -59,11 +59,10 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
 
   <!-- Listado de Servicios -->
   <section>
-    <div class="py-14 sm:py-20 bg-zinc-50 min-h-screen" data-scroll-reveal>
+    <div class="py-14 sm:py-20 bg-zinc-50 min-h-screen">
       <Container>
         <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center"
-          data-reveal-header
         >
           {
             services.map((service) => (
@@ -96,7 +95,7 @@ import BenefitImage4 from "../assets/services/benefit_4.webp";
             />
           </div>
           <div>
-            <ButtonGolden nameButton="Contactar" />
+            <ButtonGolden nameButton="Contactar" route="/#contacto" />
           </div>
           <div>
             <p class="text-white">

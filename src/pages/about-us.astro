@@ -171,8 +171,12 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
         <div
           class="flex flex-col min-[430px]:flex-row items-center justify-center lg:justify-end lg:justify-self-end w-full space-y-4 min-[430px]:space-y-0 min-[430px]:space-x-4"
         >
-          <ButtonGolden class="border border-white" nameButton="Contactar" />
-          <ButtonBlue nameButton="Ver Servicios" />
+          <ButtonGolden
+            class="border border-white"
+            nameButton="Contactar"
+            route="/#contacto"
+          />
+          <ButtonBlue nameButton="Ver Servicios" route="/services" />
         </div>
       </div>
     </Container>

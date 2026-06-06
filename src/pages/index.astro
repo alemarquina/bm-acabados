@@ -57,7 +57,7 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
   <section id="about-us" class="bg-zinc-100" data-scroll-reveal>
     <Container>
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-6 sm:py-14"
+        class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 md:gap-x-8 justify-center sm:justify-between items-center space-y-4 py-14 sm:py-24"
         data-reveal-header
       >
         <div
@@ -79,7 +79,6 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
         </div>
       </div>
     </Container>
-    <div class="h-2 bg-goldenPrimary"></div>
   </section>
 
   <section
@@ -105,7 +104,7 @@ import ButtonBlue from "../components/ui/ButtonBlue.astro";
         >
           {
             services.slice(0, 6).map((service) => (
-              <div class="service-card-wrapper" data-reveal-item>
+              <div class="service-card-wrapper">
                 <ServiceCard
                   slug={service.slug}
                   title={service.title}
