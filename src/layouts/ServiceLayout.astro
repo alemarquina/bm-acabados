@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Layout from "./Layout.astro";
 import Container from "./Container.astro";
-import type { Service } from "../content/services";
+import type { Service } from "../content/data-services-bm";
 import { Image } from "astro:assets";
 import ServiceTitleHeader from "../components/ui/ServiceTitleHeader.astro";
 
@@ -22,14 +22,13 @@ const formatDescription = (text: string) => {
 ---
 
 <Layout title={`${service.title} — BM Acabados`}>  
-  <section class="relative w-full h-[180px] md:h-[250px] flex items-center overflow-hidden px-6 min-[620px]:px-0" data-scroll-reveal>
+  <section class="relative w-full h-[180px] md:h-[280px] flex items-center overflow-hidden px-6 min-[620px]:px-0" data-scroll-reveal>
     {service.backgroundImage ? (
       <Image        
         src={service.backgroundImage}
         alt={service.title}
-        class="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={640}
+        class="absolute inset-0 w-full h-full bg-cover object-cover"        
+        height={650}
         loading="eager"
       />
     ) : (
@@ -58,7 +57,7 @@ const formatDescription = (text: string) => {
   </section>
 
   <!-- Cuerpo de Detalles del Servicio -->
-  <section class="py-4 md:py-16 lg:py-28 bg-white overflow-hidden" data-scroll-reveal>
+  <section class="pt-5 pb-10 md:py-16 lg:py-28 bg-white overflow-hidden" data-scroll-reveal>
     <Container>
       <div class="grid grid-cols-1 min-[620px]:grid-cols-12 gap-8 md:gap-12 items-start" data-reveal-header>
         
@@ -98,7 +97,7 @@ const formatDescription = (text: string) => {
             title={service.subtitle || service.shortDescription} 
           />
           <!-- Párrafos descriptivos formateados con negritas -->
-          <div class="flex flex-col space-y-2 text-slate-600 relative z-10 pl-1">
+          <div class="flex flex-col space-y-2 text-slate-600 relative z-10 whitespace-pre-line">
             {service.description ? (
               formatDescription(service.description).map((para) => (
                 <p set:html={para} class="leading-relaxed text-base" />
@@ -121,7 +120,7 @@ const formatDescription = (text: string) => {
           <!-- Título y decoraciones reutilizando el componente modular, colocado como primer item de la grilla -->
           <ServiceTitleHeader 
             bgTitle={service.title} 
-            title="Uso y<br />Características" 
+            title="Funcionalidad y<br />Características" 
             class="pt-4 h-full"
             h2Color='text-white'
             divTitleColor="text-gray-400"
@@ -141,7 +140,7 @@ const formatDescription = (text: string) => {
                   height={36}
                 />
               </div>
-              <p class="text-white font-semibold text-sm md:text-base leading-relaxed">
+              <p class="text-white text-sm md:text-base leading-relaxed">
                 {charText}
               </p>
             </div>
