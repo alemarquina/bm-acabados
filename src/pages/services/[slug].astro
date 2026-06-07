@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import { services } from "../../content/services";
+import { services } from "../../content/data-services-bm";
 
 export const getStaticPaths = (() => {
   return services.map((service) => ({
