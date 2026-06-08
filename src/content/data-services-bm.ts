@@ -98,11 +98,11 @@ export const services: Service[] = [
     description:
       "Ofrecemos pintura especializada para fierro, madera, y otras superficies utilizando materiales de calidad que aseguran durabilidad y un acabado impecable ya sea para proteger o embellecer tus espacios.\n\nEn BM Acabados ofrecemos un servicio integral de pintura tanto en interiores como en exteriores. Realizamos todo el proceso desde la restauración de grietas, hasta el pintado sólido.",  
     characteristics: [
-      "Limpiamos y lijamos para asegurar una base adecuada para la pintura.",
-      "Rellenamos imperfecciones y grietas para lograr superficies lisas antes de pintar.",
-      "Tratamos superficies porosas para prevenir filtraciones y mejorar el acabado final.",
-      "Aplicamos una capa base para mejorar la adherencia y duración de la pintura.",
-      "Permite renovar y transformar ambientes de manera económica.",
+      "Limpiamos y lijamos para asegurar una base adecuada para la pintura",
+      "Rellenamos imperfecciones y grietas para lograr superficies lisas antes de pintar",
+      "Tratamos superficies porosas para prevenir filtraciones y mejorar el acabado final",
+      "Aplicamos una capa base para mejorar la adherencia y duración de la pintura",
+      "Permite renovar y transformar ambientes de manera económica",
     ],
   },
   {
@@ -119,11 +119,11 @@ export const services: Service[] = [
     description:
       "En BM Acabados, ofrecemos la instalación profesional de sistemas de drywall para la construcción y remodelación de espacios. El drywall es una opción moderna y versátil para crear divisiones, cielos rasos, estructuras interiores y mucho más.",   
     characteristics: [
-      "Desde superficies lisas hasta texturizadas, adaptándose a cualquier diseño interior.",
-      "Creación de cielos rasos  para mejorar la estética y ocultar instalaciones.",
+      "Desde superficies lisas hasta texturizadas, adaptándose a cualquier diseño interior",
+      "Creación de cielos rasos  para mejorar la estética y ocultar instalaciones",
       "Nos encagarmos de todo el proceso de instalaciones generales y acabados finales",
-      "Creación de estanterías decorativas integradas al diseño de las paredes.",
-      "El drywall se puede reparar rápidamente sin necesidad de grandes obras "      
+      "Creación de estanterías decorativas integradas al diseño de las paredes",
+      "El drywall se puede reparar rápidamente sin necesidad de grandes obras"      
     ]
   },
   {
@@ -143,9 +143,9 @@ export const services: Service[] = [
     characteristics: [
       "Personaliza tu propio acabado y tono según tus preferencias",
       "Resiste el paso del tiempo y se mantiene con un mínimo mantenimiento",
-      "Permite que las paredes respiren, evitando problemas de humedad.",
-      "Es repelente al polvo y al agua, lo que facilita su mantenimiento.",
-      "Compatible con superficies de yeso, cemento y madera, entre otras.",
+      "Permite que las paredes respiren, evitando problemas de humedad",
+      "Es repelente al polvo y al agua, lo que facilita su mantenimiento",
+      "Compatible con superficies de yeso, cemento y madera, entre otras",
     ]
   },
   {
@@ -164,8 +164,8 @@ export const services: Service[] = [
       Brindamos atención oportuna frente a fugas de agua, filtraciones o problemas de presión. Nuestro equipo actúa con rapidez y precisión para evitar daños mayores, asegurando el buen estado de tus instalaciones sanitarias.`,   
     characteristics: [
       "Solucionamos filtraciones, cambios de grifería o desagües conflictivos",
-      "Aseguramos una mayor vida útil y eficiencia en el sistema de agua o desagüe.",
-      "Contamos con técnicos que brindan un servicio eficiente y profesional en cada visita.",
+      "Aseguramos una mayor vida útil y eficiencia en el sistema de agua o desagüe",
+      "Contamos con técnicos que brindan un servicio eficiente y profesional en cada visita",
       "Corregir instalaciones mejora el consumo de agua y reduce gastos",
       "Aseguramos una instalación funcional para incrementar la seguridad de tus conexiones"
     ]
@@ -185,10 +185,10 @@ export const services: Service[] = [
       `Son piedras naturales muy utilizadas por su resistencia, duración y apariencia elegante. Ideales para pisos, paredes, encimeras, fachadas y más. El mármol y el granito ofrecen alta resistencia, durabilidad y una apariencia elegante. Se instalan sobre superficies firmes como concreto o muros sólidos, brindando un acabado de alta calidad tanto en interiores como exteriores.`,   
     characteristics: [
       "Tableros de cocina, baño, fachadas, suelos, escaleras, mesas de centro, y más",
-      "Cada pieza de mármol es única, ya que se trata de un material natural y puro.",
-      "El mármol es una piedra que desarrolla una capa protectora con el tiempo.",
+      "Cada pieza de mármol es única, ya que se trata de un material natural y puro",
+      "El mármol es una piedra que desarrolla una capa protectora con el tiempo",
       "Tienen ventajas estéticas y de durabilidad, son una inversión rentable",
-      "Elegancia y pureza, juntos son ideales para acabados duraderos y sofisticados."
+      "Elegancia y pureza, juntos son ideales para acabados duraderos y sofisticados"
     ]
   },  
   {
@@ -198,8 +198,19 @@ export const services: Service[] = [
       "Ofrecemos trabajos de carpintería en madera con acabados precisos y funcionales.",
     image: service6,
     icon: iconCarpinteria,
+    backgroundImage: bgCarpinteria,
+    detailImage: carpinteria1,
+    gallery: [carpinteria2, carpinteria3],
+    subtitle: "DISEÑO, FABRICACIÓN Y ACABADOS EN MADERA",
     description:
-      "Fabricamos e instalamos muebles, puertas, closets y revestimientos en madera. Cada proyecto es diseñado a medida para adaptarse al estilo y necesidades del cliente.",    
+      "Brindamos soluciones en carpintería para interiores y exteriores, fabricando e instalando muebles, puertas y estructuras a medida. Protegemos la madera de la humedad, el desgaste y los rayos UV, como también recuperamos su estado original utilizando productos de alta calidad y ecoamigables. Cada proyecto es único, adaptamos nuestro servicio a tus necesidades.",    
+    characteristics: [
+      "Acabados en madera, recuperando su belleza y resistencia natural",
+      "Creamos acabados resistentes que realzan el valor de tu propiedad",
+      "Mejoramos tus espacios con soluciones funcionales y personalizadas",
+      "Utilizamos materiales de calidad para acabados duraderos y elegantes.",
+      "Contamos con carpinteros de nivel para trabajos precisos y detallados."
+    ]
   },
   {
     slug: "mayolica-porcelanato",
@@ -208,8 +219,19 @@ export const services: Service[] = [
       "Colocamos mayólicas y porcelanato logrando superficies resistentes, estéticas y fácil de mantener.",
     image: service7,
     icon: iconMayolica,
+    backgroundImage: bgMayolicaPorcelanato,
+    detailImage: mayolicaAndPorcelanato1,
+    gallery: [mayolicaAndPorcelanato2, mayolicaAndPorcelanato3],
+    subtitle: "DALE VIDA Y PROTECCIÓN A TUS ESPACIOS ",
     description:
-      "Instalamos mayólicas y porcelanato en baños, cocinas, pisos y fachadas. Garantizamos un acabado uniforme, juntas perfectas y materiales de primera calidad.",                
+      "La mayólica y el porcelanato son acabados cerámicos ideales para zonas que requieren fácil limpieza y alta resistencia a la humedad. Este acabado es muy utilizado en baños, cocinas, lavanderías y muros expuestos, tanto en interiores como exteriores. Ofrecemos una instalación profesional con acabados limpios, nivelados y bien sellados.",                
+    characteristics: [
+      "Instalamos mayólica y porcelanato con acabados precisos y duraderos",
+      "Fácil mantenimiento gracias a su acabado esmaltado que permite una limpieza rápida.",
+      "Utilizamos materiales de calidad para una instalación resistente y elegante.",
+      "Mejoramos tus espacios con diseños modernos y funcionales.",
+      "Creamos superficies resistentes que realzan el valor de tu propiedad."
+    ]
   },
   {
     slug: "piso-laminado-spc",
@@ -218,7 +240,21 @@ export const services: Service[] = [
       "Instalamos pisos laminados como también de SPC muy durables y de poco mantenimiento requerido.",
     image: service8,
     icon: iconPiso,
+    backgroundImage: bgLaminadoSPC,
+    detailImage: laminadoAndSPC1,
+    gallery: [laminadoAndSPC2, laminadoAndSPC3],
+    subtitle: "ESTILIZA TUS ESPACIOS CON PISO LAMINADO Y SPC",
     description:
-      "Instalamos pisos laminados y SPC (Stone Plastic Composite), ideales por su resistencia al agua, durabilidad y fácil mantenimiento. Perfectos para hogares, oficinas y locales comerciales.",    
+      "El piso laminado y el SPC (Compuesto de Plástico de Piedra) son alternativas modernas y versátiles para ambientes interiores. Ambos ofrecen una estética tipo madera, fácil mantenimiento y gran durabilidad. Su instalación rápida y limpia los convierte en una excelente opción para hogares y oficinas.",    
+    characteristics: [
+      "Fáciles de limpiar y mantener, ideales para hogares activos.",
+      "Ambos ofrecen estabilidad, absorción acústica y una larga vida útil.",
+      "Imitación madera con acabados modernos, realistas y elegantes.",
+      "El laminado destaca por su instalación rápida, confort y estética.",
+      "El SPC es impermeable, antideslizante y resistente a cambios de temperatura."
+
+
+
+    ]
   },
 ];

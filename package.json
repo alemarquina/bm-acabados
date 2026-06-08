@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/LucianMarquina/bm-acabados#readme",
   "dependencies": {
-    "@astrojs/react": "^5.0.5",
+    "@astrojs/react": "^5.0.7",
     "@astrojs/tailwind": "^6.0.2",
     "@fontsource/encode-sans-sc": "^5.2.8",
     "@fontsource/poppins": "^5.2.7",
@@ -30,7 +30,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "animate.css": "^4.1.1",
-    "astro": "^6.3.8",
+    "astro": "^6.4.4",
     "lucide-astro": "^0.556.0",
     "motion": "^12.40.0",
     "react": "^19.2.1",

@@ -22,7 +22,7 @@ const formatDescription = (text: string) => {
 ---
 
 <Layout title={`${service.title} — BM Acabados`}>  
-  <section class="relative w-full h-[180px] md:h-[280px] flex items-center overflow-hidden px-6 min-[620px]:px-0" data-scroll-reveal>
+  <section class="relative w-full h-[180px] md:h-[280px] flex items-center overflow-hidden px-8" data-scroll-reveal>
     {service.backgroundImage ? (
       <Image        
         src={service.backgroundImage}
@@ -112,11 +112,11 @@ const formatDescription = (text: string) => {
     </Container>
   </section>
 
-  <!-- Sección de Uso y Características -->
+  <!-- Sección de Funcionalidad y Características -->
   {service.characteristics && service.characteristics.length > 0 && (
-    <section class="py-16 md:py-24 bg-bluePrimary border-t border-slate-100 overflow-hidden">
+    <section class="py-8 md:py-24 bg-bluePrimary border-t border-slate-100 overflow-hidden">
       <Container>
-        <div class="grid grid-cols-1 min-[580px]:grid-cols-2 lg:grid-cols-3 gap-6 px-6 min-[620px]:px-0">          
+        <div class="grid grid-cols-1 min-[580px]:grid-cols-2 lg:grid-cols-3 gap-6">          
           <!-- Título y decoraciones reutilizando el componente modular, colocado como primer item de la grilla -->
           <ServiceTitleHeader 
             bgTitle={service.title} 
@@ -128,7 +128,7 @@ const formatDescription = (text: string) => {
           <!-- Tarjetas de características en las siguientes posiciones de la grilla -->
           {service.characteristics.map((charText) => (
             <div 
-              class="h-32 md:h-40 max-w-64 md:max-w-72 bg-goldenPrimary p-2 md:py-6 md:px-3 flex space-y-2 flex-col justify-start relative hover:-translate-y-4 transition-all duration-300 group shadow-sm border border-goldenSecondary/40 rounded-2xl"
+              class="h-32 md:h-40 max-w-64 mx-auto md:max-w-72 sm:mx-0 bg-goldenPrimary p-2 md:py-6 md:px-3 flex space-y-2 flex-col justify-start relative hover:-translate-y-4 transition-all duration-300 group shadow-sm border border-goldenSecondary/40 rounded-2xl"
               style="clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);"
             >
               <div>
