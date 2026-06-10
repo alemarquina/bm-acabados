@@ -121,7 +121,7 @@ export const services: Service[] = [
     characteristics: [
       "Desde superficies lisas hasta texturizadas, adaptándose a cualquier diseño interior",
       "Creación de cielos rasos  para mejorar la estética y ocultar instalaciones",
-      "Nos encagarmos de todo el proceso de instalaciones generales y acabados finales",
+      "Nos encargamos de todo el proceso de instalaciones generales y acabados finales",
       "Creación de estanterías decorativas integradas al diseño de las paredes",
       "El drywall se puede reparar rápidamente sin necesidad de grandes obras"      
     ]
@@ -136,7 +136,7 @@ export const services: Service[] = [
     backgroundImage: bgEstuco,
     detailImage: estuco1,
     gallery: [estuco2, estuco3],
-    subtitle: "RENUEVA TUS ESPACIOS CON ESTUCO DANDOLE UN AMBIENTE SOFISTICADO",
+    subtitle: "RENUEVA TUS ESPACIOS CON ESTUCO DÁNDOLE UN AMBIENTE SOFISTICADO",
     description:
       `Una técnica decorativa que transforma espacios con un acabado elegante, brillante y liso, inspirado en la arquitectura clásica italiana. Es una solución estética ideal para quienes buscan ambientes sofisticados y personalizados.\n
       El estuco veneciano es un acabado decorativo a base de cal, pigmentos naturales y aditivos, que se aplica en varias capas para lograr un efecto de profundidad y brillo.`,    
@@ -172,9 +172,9 @@ export const services: Service[] = [
   },
   {
     slug: "marmol-granito",
-    title: "Marmol y Granito",
+    title: "Mármol y Granito",
     shortDescription:
-      "Ofrecemos servicios de nivel en mármol y granito, como también el marmolizado para realizar cualquier espacio.",
+      "Ofrecemos servicios de nivel en mármol y granito, como también el marmolizado para realzar cualquier espacio.",
     image: service5,
     icon: iconMarmol,
     backgroundImage: bgMarmolGranito,
@@ -216,7 +216,7 @@ export const services: Service[] = [
     slug: "mayolica-porcelanato",
     title: "Mayólica y Porcelanato",
     shortDescription:
-      "Colocamos mayólicas y porcelanato logrando superficies resistentes, estéticas y fácil de mantener.",
+      "Colocamos mayólicas y porcelanato logrando superficies resistentes, estéticas y fáciles de mantener.",
     image: service7,
     icon: iconMayolica,
     backgroundImage: bgMayolicaPorcelanato,
