@@ -1,4 +1,4 @@
-## LICENCIA DE SOFTWARE PROPIETARIO
+## LICENCIA DE PÁGINA WEB PROPIETARIO
 
 **BM Acabados — Todos los Derechos Reservados**  
 **Titular de los Derechos:** BM Acabados  
