@@ -192,10 +192,10 @@ export const services: Service[] = [
     ]
   },  
   {
-    slug: "carpinteria",
+    slug: "Acabado",
     title: "Carpintería",
     shortDescription:
-      "Ofrecemos trabajos de carpintería en madera con acabados precisos y funcionales.",
+      "Servicio de carpintería, como también de acabados precisos y funcionales en todo tipo de madera",
     image: service6,
     icon: iconCarpinteria,
     backgroundImage: bgCarpinteria,
