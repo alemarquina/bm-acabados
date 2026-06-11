@@ -1,16 +1,89 @@
 ---
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string | URL;
+}
+
+const {
+  title,
+  description = "Servicios profesionales en drywall, pintura, enchape, porcelanato, tarrajeo, electricidad y acabados de construcción de alta calidad en Lima, Perú.",
+  image = "/logo_bm.png",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://bmacabados.me"),
+} = Astro.props;
+
+// Asegurar URL absoluta para la imagen de OpenGraph
+const imageUrl = new URL(image, Astro.site || "https://bmacabados.me").toString();
+
+// ¿Estamos en la página de inicio?
+const isHome = Astro.url.pathname === "/";
+
+// Marcado estructurado JSON-LD para LocalBusiness (SEO local de Google)
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "BM Acabados",
+  "image": imageUrl,
+  "@id": "https://bmacabados.me/#localbusiness",
+  "url": "https://bmacabados.me",
+  "telephone": "+51 937 343 082",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Lima, Perú",
+    "addressLocality": "Lima",
+    "addressRegion": "Lima",
+    "addressCountry": "PE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -12.046374,
+    "longitude": -77.042793
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  }
+};
 ---
 
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="description"
-    content="BM Acabados - Servicios profesionales en todo tipo de acabados"
-  />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
   <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+
+  <!-- Metadatos de SEO estándar -->
   <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={imageUrl} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={imageUrl} />
+
+  <!-- Marcado Estructurado JSON-LD para Google (Local Business) -->
+  {isHome && (
+    <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  )}
 </head>

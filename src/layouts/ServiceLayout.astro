@@ -21,7 +21,11 @@ const formatDescription = (text: string) => {
 };
 ---
 
-<Layout title={`${service.title} — BM Acabados`}>  
+<Layout 
+  title={`${service.title} — BM Acabados`}
+  description={service.shortDescription}
+  image={service.detailImage || service.image}
+>  
   <section class="relative w-full h-[180px] md:h-[280px] flex items-center overflow-hidden px-8" data-scroll-reveal>
     {service.backgroundImage ? (
       <Image        

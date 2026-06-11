@@ -8,12 +8,12 @@ import Footer from "../components/base/Footer.astro";
 import ButtonWhatsapp from "../components/ui/ButtonWhatsapp.astro";
 import "animate.css";
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-  <Head title={title} />
+  <Head title={title} description={description} image={image} />
   <body>
     <Header />
     <slot />
